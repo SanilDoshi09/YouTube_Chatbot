@@ -3,15 +3,9 @@
     "name": "YouTube Chatbot Extension",
     "version": "1.0",
     "description": "An interactive chatbot for YouTube videos to enhance learning and engagement.",
-    "icons": {
-      "16": "public/icons/icon16.png",
-      "48": "public/icons/icon48.png",
-      "128": "public/icons/icon128.png"
-    },
     "permissions": [
       "activeTab",
-      "storage",
-      "https://www.googleapis.com/"
+      "storage"
     ],
     "background": {
       "service_worker": "src/background.js"
@@ -23,14 +17,8 @@
       }
     ],
     "action": {
-      "default_popup": "public/popup.html",
-      "default_icon": {
-        "16": "public/icons/icon16.png",
-        "48": "public/icons/icon48.png",
-        "128": "public/icons/icon128.png"
-      }
+      "default_popup": "public/popup.html"
     },
-    "options_page": "public/options.html",
     "web_accessible_resources": [
       {
         "resources": ["public/popup.html", "src/popup/*"],
