@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  node_app:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - python_service
+
+  python_service:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./ai:/app
+    environment:
+      - PYTHONUNBUFFERED=1
